@@ -1,0 +1,92 @@
+{
+    "Beauty": [
+        {
+            "id": "beauty1",
+            "image": "BlackMascara",
+            "name": "Black Mascara",
+            "price": 120,
+            "tag": "Selling fast"
+        },
+        {
+            "id": "beauty2",
+            "image": "FacialApilator",
+            "name": "Facial Epilator",
+            "price": 200,
+            "tag": "Free Delivery"
+        },
+        {
+            "id": "beauty3",
+            "image": "NailPolish",
+            "name": "Nail Polish",
+            "price": 80,
+            "tag": "Hot Pick"
+        },
+        {
+            "id": "beauty4",
+            "image": "PeelOffMask",
+            "name": "Peel Off Mask",
+            "price": 250,
+            "tag": "New Arrival"
+        }
+    ],
+    "Electronics": [
+        {
+            "id": "elec1",
+            "image": "Speaker",
+            "name": "Speaker",
+            "price": 500,
+            "tag": "New Arrival"
+        },
+        {
+            "id": "elec2",
+            "image": "Trimmer",
+            "name": "Trimmer",
+            "price": 1000,
+            "tag": "Selling Fast"
+        },
+        {
+            "id": "elec3",
+            "image": "Earphone",
+            "name": "Earphone",
+            "price": 160,
+            "tag": "Hot Pick"
+        },
+        {
+            "id": "elec4",
+            "image": "SmartWatch",
+            "name": "Smart Watch",
+            "price": 2000,
+            "tag": "New Arrival"
+        }
+    ],
+    "Toys": [
+        {
+            "id": "toy1",
+            "image": "PlushDinosaur",
+            "name": "Plush Dinosaur",
+            "price": 160,
+            "tag": "Selling fast"
+        },
+        {
+            "id": "toy2",
+            "image": "TeddyBear",
+            "name": "Teddy Bear",
+            "price": 270,
+            "tag": "Free Delivery"
+        },
+        {
+            "id": "toy3",
+            "image": "RemoteCar",
+            "name": "Remote Car",
+            "price": 300,
+            "tag": "Hot Pick"
+        },
+        {
+            "id": "toy4",
+            "image": "VolleyBall",
+            "name": "Volley Ball",
+            "price": 190,
+            "tag": "New Arrival"
+        }
+    ]
+}
