@@ -1,6 +1,7 @@
 import { getCategoryProductsAction, getFeaturedProductsAction } from '../reducers/productsReducer';
 import { BannerItem, ProductItem } from '../../constants/interfaces/Products';
 import { delay, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { ACTIONS } from '../../constants/enum/GeneralEnum';
 
 function* fetchFeaturedProducts() : any {
     try {
@@ -26,7 +27,7 @@ function* fetchCategoryProducts({ title } : any) : any {
 }
 
 export default function* productSaga() {
-    yield takeLatest('fetchFeaturedProducts', fetchFeaturedProducts);
-    yield takeEvery('fetchCategoryProducts', fetchCategoryProducts);
+    yield takeLatest(ACTIONS.FETCH_FEATURED_PRODUCTS, fetchFeaturedProducts);
+    yield takeEvery(ACTIONS.FETCH_CATEGORY_PRODCUTS, fetchCategoryProducts);
 }
 
