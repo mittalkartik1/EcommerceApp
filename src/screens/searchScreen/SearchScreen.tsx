@@ -12,7 +12,7 @@ import styles from './styles';
 import {ProductItem} from '../../constants/interfaces/Products';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SCREENS} from '../../constants/enum/GeneralEnum';
-import { TouchableParent } from '../../components';
+import {TouchableParent} from '../../components';
 
 const SearchScreen = ({navigation}: any) => {
     const insets = useSafeAreaInsets();
@@ -76,12 +76,33 @@ const SearchScreen = ({navigation}: any) => {
         setState(prevState => ({...prevState, query: text}));
     };
 
+    const searchItem = ({item} : {item: ProductItem}) => (
+        <TouchableParent
+            onPress={() =>
+                navigation.replace(SCREENS.PRODUCT_DETAIL_SCREEN, {
+                    productId: item.id,
+                })
+            }>
+            <View style={styles.productItem}>
+                <Image
+                    source={productImages[item.image]}
+                    style={styles.productImage}
+                    resizeMode="contain"
+                />
+                <Text>{item.name}</Text>
+            </View>
+        </TouchableParent>
+    );
+
     return (
         <View style={[styles.container, {paddingTop: insets.top + 15}]}>
             <TouchableParent
                 style={styles.alignSelfEnd}
                 onPress={() => navigation.goBack()}>
-                <Image source={appIcons.CloseIcon} style={[styles.searchIcon, styles.alignSelfEnd]} />
+                <Image
+                    source={appIcons.CloseIcon}
+                    style={[styles.searchIcon, styles.alignSelfEnd]}
+                />
             </TouchableParent>
             <View style={styles.searchbar}>
                 <Image
@@ -114,24 +135,7 @@ const SearchScreen = ({navigation}: any) => {
                             </Text>
                         )
                     }
-                    renderItem={({item}) => (
-                        <TouchableParent
-                            onPress={() =>
-                                navigation.replace(
-                                    SCREENS.PRODUCT_DETAIL_SCREEN,
-                                    {productId: item.id},
-                                )
-                            }>
-                            <View style={styles.productItem}>
-                                <Image
-                                    source={productImages[item.image]}
-                                    style={styles.productImage}
-                                    resizeMode="contain"
-                                />
-                                <Text>{item.name}</Text>
-                            </View>
-                        </TouchableParent>
-                    )}
+                    renderItem={searchItem}
                 />
             )}
         </View>

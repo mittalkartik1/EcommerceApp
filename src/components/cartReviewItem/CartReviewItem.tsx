@@ -25,4 +25,4 @@ const CartReviewItem = ({ cartItem, showImage = false } : { cartItem: CartItem, 
     );
 };
 
-export default CartReviewItem;
+export default React.memo(CartReviewItem, (prev, next) => prev.cartItem.quantity === next.cartItem.quantity);

@@ -53,4 +53,4 @@ const CartItemView = ({ cartItem, showImage = false, isSinglePrice = false } : {
     );
 };
 
-export default CartItemView;
+export default React.memo(CartItemView, (prev, next) => prev.cartItem.quantity === next.cartItem.quantity);
