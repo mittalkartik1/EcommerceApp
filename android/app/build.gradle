@@ -92,6 +92,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('../keys/ecommerce.keystore')
+            storePassword 'Ecommerce'
+            keyAlias 'ecommerce'
+            keyPassword 'Ecommerce'
+        }
     }
     buildTypes {
         debug {
@@ -102,6 +108,7 @@ android {
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }

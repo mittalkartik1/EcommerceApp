@@ -1,6 +1,6 @@
 export const productImages: { [key: string]: any } = {
     BlackMascara: require('../../assets/images/black_mascara.jpg'),
-    FacialApilator: require('../../assets/images/facial_epilator.png'),
+    FacialApilator: require('../../assets/images/facial_epilator.jpg'),
     NailPolish: require('../../assets/images/nailpolish.png'),
     PeelOffMask: require('../../assets/images/peel_off_mask.jpg'),
     Speaker: require('../../assets/images/speaker.jpg'),
