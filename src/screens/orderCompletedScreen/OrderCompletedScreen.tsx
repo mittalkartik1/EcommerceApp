@@ -14,7 +14,9 @@ const OrderCompletedScreen = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(clearCart());
+        setTimeout(() => {
+            dispatch(clearCart());
+        }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -10,9 +10,9 @@ const calculateCartData = (state: CartInterface, payload: CartItem) => {
   if(payload.quantity <= 0) {
     totalQuantity--;
     totalAmount -= payload.item.price;
-    const tempState = JSON.parse(JSON.stringify(state));
-    delete tempState.items[payload.item.id];
-    return { ...tempState, totalQuantity, totalAmount };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { [payload.item.id]: _, ...newItems} = state.items;
+    return { ...state, items: newItems, totalQuantity, totalAmount };
   } else {
     const quantityDifference = payload.quantity - (state.items[payload.item.id]?.quantity ?? 0);
     totalQuantity += quantityDifference;

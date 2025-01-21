@@ -6,8 +6,13 @@ import CategoryProducts from './components/CategoryProducts';
 import {SCREENS} from '../../constants/enum/GeneralEnum';
 import {appIcons} from '../../constants/images/Images';
 import {TouchableParent} from '../../components';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../redux/store';
 
 const HomeScreen = ({navigation}: any) => {
+    const cartQuantity: number = useSelector(
+        (rootState: RootState) => rootState.cart.totalQuantity,
+    );
     return (
         <ScrollView
             overScrollMode={'never'}
@@ -31,11 +36,18 @@ const HomeScreen = ({navigation}: any) => {
                 </TouchableParent>
                 <TouchableParent
                     onPress={() => navigation.navigate(SCREENS.CART_SCREEN)}>
-                    <Image
-                        source={appIcons.CartIcon}
-                        style={styles.cartIcon}
-                        resizeMode="cover"
-                    />
+                    <View>
+                        <Image
+                            source={appIcons.CartIcon}
+                            style={styles.cartIcon}
+                            resizeMode="cover"
+                        />
+                        {cartQuantity > 0 && (
+                            <View style={styles.itemCountView}>
+                                <Text style={styles.itemCountText}>{cartQuantity}</Text>
+                            </View>
+                        )}
+                    </View>
                 </TouchableParent>
             </View>
             <FeaturedProducts />

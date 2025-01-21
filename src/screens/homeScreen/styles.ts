@@ -88,6 +88,22 @@ const styles = StyleSheet.create({
     marginTop15: {
         marginTop: 15,
     },
+    itemCountView: {
+        width: 15,
+        height: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'red',
+        borderRadius: 10,
+        position: 'absolute',
+        bottom: -5,
+        right: 10,
+    },
+    itemCountText: {
+        fontWeight: 'bold',
+        color: 'white',
+        fontSize: 10,
+    },
 });
 
 export default styles;

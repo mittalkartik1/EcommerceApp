@@ -35,12 +35,19 @@ const CategoryProducts = ({title}: {title: string}) => {
     const navigation = useNavigation<NavigationProp>();
     const categoryProductsState: CategoryProductState = useSelector(
         (state: RootState) => state.products.categoryProducts,
+        arePropsEqual,
     );
 
     useEffect(() => {
         dispatch(fetchCategoryProducts(title));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    function arePropsEqual(prev : CategoryProductState, next: CategoryProductState) : boolean {
+        if(prev.isLoading !== next.isLoading) {return false;}
+        if(prev.data?.[title]?.length !== next.data?.[title]?.length) {return false;}
+        return true;
+    }
 
     const productItem = ({item}: {item: ProductItem}) => (
         <TouchableParent
